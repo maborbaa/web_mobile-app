@@ -15,7 +15,7 @@ Práticas de desenvolvimento **web e mobile**, com o registro do que fiz e do qu
 
 | # | Prática | Tecnologias | Status | O que aprendi |
 | --- | --- | --- | --- | --- |
-| 01 | [Janela de Plantio](praticas/01-janela-de-plantio/) | Android, Kotlin, Jetpack Compose, AgroAPI/Embrapa | Em planejamento | A preencher |
+| 01 | [Janela de Plantio](praticas/01-janela-de-plantio/) | Android, Kotlin, Jetpack Compose, AgroAPI/Embrapa | Em andamento | A preencher |
 
 ## Como acompanhar
 
