@@ -1,6 +1,15 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+}
+
+val localProperties = Properties().apply {
+    val file = rootProject.file("local.properties")
+    if (file.exists()) {
+        file.inputStream().use { load(it) }
+    }
 }
 
 android {
@@ -17,6 +26,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val agroKey = localProperties.getProperty("AGROAPI_KEY")?.trim('"') ?: ""
+        val agroSecret = localProperties.getProperty("AGROAPI_SECRET")?.trim('"') ?: ""
+        buildConfigField("String", "AGROAPI_KEY", "\"$agroKey\"")
+        buildConfigField("String", "AGROAPI_SECRET", "\"$agroSecret\"")
     }
 
     buildTypes {
@@ -33,6 +47,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -52,4 +67,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.okhttp.logging)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
