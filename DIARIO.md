@@ -2,6 +2,12 @@
 
 Uma entrada curta por sessão de trabalho, da mais recente para a mais antiga. Cada item indica a prática entre colchetes.
 
+## 2026-11-25
+
+- [01-janela-de-plantio] Validei a autenticação OAuth2 e os endpoints reais da Agritec v2 (`/culturas`, `/municipios` e `/zoneamento`) com `scripts/testar_agroapi.py`.
+- [01-janela-de-plantio] Implementei o MVP completo em Kotlin + Jetpack Compose com Retrofit, `AgritecApiDataSource`, `PlantioRepository` (cálculo dos 36 decêndios) e `PlantioViewModel` (`StateFlow`), executando no emulador Android.
+- Próximo passo: escrever testes unitários para o cálculo de decêndios e adicionar filtro de busca no seletor de culturas.
+
 ## 2026-11-23
 
 - [01-janela-de-plantio] Configurei o ambiente Android no Ubuntu (KVM ativo e Android Studio Rabbit 2) e criei o projeto `JanelaDePlantio` em Kotlin + Jetpack Compose (`praticas/01-janela-de-plantio/android/`).
